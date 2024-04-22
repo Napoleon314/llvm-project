@@ -1,0 +1,32 @@
+{
+    "folders": [
+        {
+            "name": "llvm-project",
+            "path": "."
+        }
+    ],
+    "settings": {
+        "files.associations": {
+            "*.uplugin": "json"
+        },
+        "workbench.editor.enablePreviewFromQuickOpen": false,
+        "dotnet.preferCSharpExtension": true
+    },
+    "tasks": {
+        "version": "2.0.0",
+        "tasks": [
+            {
+                "label": "Configure",
+                "command": "cmake",
+                "type": "process",
+                "args": [
+                    "-Sllvm",
+                    "-Bbuild",
+                    "-DLLVM_ENABLE_PROJECTS=clang",
+                    "-DCMAKE_INSTALL_PREFIX=build/install"
+                ],
+                "group": "build"
+            },
+        ]
+    }
+}
